@@ -1,0 +1,15 @@
+# Sensitive credentials
+.env
+*.env
+
+# Environment and Cache
+venv/
+__pycache__/
+*.pyc
+
+# Logs
+*.log
+*.txt
+
+# OS Files
+.DS_Store
