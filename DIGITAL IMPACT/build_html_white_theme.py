@@ -1,7 +1,7 @@
 import json
 import os
 
-dataset_path = "/Users/hamza/Documents/KPITB/RTS/DIGITAL IMPACT/kpk_ecosystem_cube.json"
+dataset_path = "/Users/hamza/Documents/KPITB/RTS/DIGITAL IMPACT/kpk_4system_cube.json"
 district_path = "/Users/hamza/Documents/KPITB/RTS/DIGITAL IMPACT/district_data.json"
 html_path = "/Users/hamza/Documents/KPITB/RTS/DIGITAL IMPACT/arms_licensing_impact_dashboard.html"
 
@@ -190,20 +190,20 @@ html_content = f"""<!DOCTYPE html>
         .system-tabs-container {{
             margin: 20px 0 16px 0;
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 12px;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 10px;
         }}
 
         .system-tab {{
             background: #FFFFFF;
             border: 2px solid var(--border-color);
-            border-radius: 14px;
-            padding: 14px 16px;
+            border-radius: 12px;
+            padding: 12px 14px;
             cursor: pointer;
             transition: all 0.2s;
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 10px;
             box-shadow: var(--shadow-sm);
         }}
 
@@ -219,15 +219,16 @@ html_content = f"""<!DOCTYPE html>
         }}
 
         .system-tab-icon {{
-            width: 36px;
-            height: 36px;
+            width: 32px;
+            height: 32px;
             border-radius: 8px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 16px;
+            font-size: 15px;
             background: var(--bg-primary);
             color: var(--accent-blue);
+            flex-shrink: 0;
         }}
 
         .system-tab.active .system-tab-icon {{
@@ -236,14 +237,14 @@ html_content = f"""<!DOCTYPE html>
         }}
 
         .system-tab-text h3 {{
-            font-size: 13px;
+            font-size: 12px;
             font-weight: 800;
             color: var(--text-primary);
             line-height: 1.2;
         }}
 
         .system-tab-text p {{
-            font-size: 11px;
+            font-size: 10px;
             color: var(--text-muted);
         }}
 
@@ -924,6 +925,14 @@ html_content = f"""<!DOCTYPE html>
                     <p>Transport Department</p>
                 </div>
             </div>
+
+            <div class="system-tab" id="tabHunting" onclick="selectSystem('Wildlife & Hunting')">
+                <div class="system-tab-icon"><i class="fa-solid fa-feather-pointed"></i></div>
+                <div class="system-tab-text">
+                    <h3>Wildlife & Hunting</h3>
+                    <p>Forestry Department</p>
+                </div>
+            </div>
         </section>
 
         <!-- Hero Banner -->
@@ -931,7 +940,7 @@ html_content = f"""<!DOCTYPE html>
             <div class="hero-title-group">
                 <span class="hero-tag" id="heroTag">WHOLE KPK DIGITAL TRANSFORMATION</span>
                 <h2 id="heroTitle">Digitising Public Services Across Khyber Pakhtunkhwa</h2>
-                <p id="heroDesc">Quantifying financial, public, environmental, and governance impacts across all 43 districts for 8.28 Million public transactions.</p>
+                <p id="heroDesc">Quantifying financial, public, environmental, and governance impacts across all 43 districts for 8.32 Million public transactions.</p>
             </div>
         </section>
 
@@ -1004,7 +1013,7 @@ html_content = f"""<!DOCTYPE html>
                     <span class="metric-label">Total Applications</span>
                     <div class="metric-icon"><i class="fa-solid fa-file-signature"></i></div>
                 </div>
-                <div class="metric-value" id="kpiApps">8,281,132</div>
+                <div class="metric-value" id="kpiApps">8,318,620</div>
                 <div class="metric-sub">Processed Digitally</div>
             </div>
 
@@ -1013,7 +1022,7 @@ html_content = f"""<!DOCTYPE html>
                     <span class="metric-label">Treasury Revenue</span>
                     <div class="metric-icon"><i class="fa-solid fa-building-columns"></i></div>
                 </div>
-                <div class="metric-value" id="kpiRev">PKR 7.74B</div>
+                <div class="metric-value" id="kpiRev">PKR 7.75B</div>
                 <div class="metric-sub">100% Documented Revenue</div>
             </div>
 
@@ -1022,7 +1031,7 @@ html_content = f"""<!DOCTYPE html>
                     <span class="metric-label">Direct Citizen Savings</span>
                     <div class="metric-icon"><i class="fa-solid fa-wallet"></i></div>
                 </div>
-                <div class="metric-value" id="kpiSavings">PKR 20.72B</div>
+                <div class="metric-value" id="kpiSavings">PKR 20.81B</div>
                 <div class="metric-sub">Out-of-Pocket Expense Saved</div>
             </div>
 
@@ -1031,7 +1040,7 @@ html_content = f"""<!DOCTYPE html>
                     <span class="metric-label">Working Hours Returned</span>
                     <div class="metric-icon"><i class="fa-solid fa-clock-rotate-left"></i></div>
                 </div>
-                <div class="metric-value" id="kpiHours">198.74M hrs</div>
+                <div class="metric-value" id="kpiHours">199.65M hrs</div>
                 <div class="metric-sub">24 hrs saved per application</div>
             </div>
         </section>
@@ -1060,9 +1069,9 @@ html_content = f"""<!DOCTYPE html>
                     <h3>Instant, Transparent, Traceable E-Services</h3>
                     <ul class="paradigm-list">
                         <li><i class="fa-solid fa-check"></i> <strong>Zero Travel Needed:</strong> Apply anytime 24/7/365 from mobile or laptop.</li>
-                        <li><i class="fa-solid fa-check"></i> <strong>Direct Relief:</strong> PKR 20.72 Billion saved directly in citizen out-of-pocket costs.</li>
-                        <li><i class="fa-solid fa-check"></i> <strong>198.74 Million Working Hours Saved:</strong> 24 working hours returned per citizen.</li>
-                        <li><i class="fa-solid fa-check"></i> <strong>Biometric Verification:</strong> 100% NADRA verified & police/excise clearances.</li>
+                        <li><i class="fa-solid fa-check"></i> <strong>Direct Relief:</strong> PKR 20.81 Billion saved directly in citizen out-of-pocket costs.</li>
+                        <li><i class="fa-solid fa-check"></i> <strong>199.65 Million Working Hours Saved:</strong> 24 working hours returned per citizen.</li>
+                        <li><i class="fa-solid fa-check"></i> <strong>Biometric Verification:</strong> 100% NADRA verified & department clearances.</li>
                     </ul>
                 </div>
             </div>
@@ -1084,7 +1093,7 @@ html_content = f"""<!DOCTYPE html>
                             <span class="pillar-tag"><i class="fa-solid fa-user-shield"></i> PUBLIC IMPACT</span>
                             <i class="fa-solid fa-hand-holding-heart" style="color: var(--accent-blue); font-size: 20px;"></i>
                         </div>
-                        <div class="pillar-hero-num" id="pillarOutPocket">PKR 20.72B</div>
+                        <div class="pillar-hero-num" id="pillarOutPocket">PKR 20.81B</div>
                         <div class="pillar-hero-title">Total Citizen Out-of-Pocket Cost Saved</div>
                         <div class="pillar-formula-box">
                             Male (PKR 2,500) | Female (PKR 4,000)
@@ -1094,15 +1103,15 @@ html_content = f"""<!DOCTYPE html>
                     <div class="pillar-stats-list">
                         <div class="pillar-stat-item">
                             <span class="pillar-stat-label"><i class="fa-solid fa-car-side"></i> Physical Visits Avoided</span>
-                            <span class="pillar-stat-val" id="pillarVisits">16,562,264</span>
+                            <span class="pillar-stat-val" id="pillarVisits">16,637,240</span>
                         </div>
                         <div class="pillar-stat-item">
                             <span class="pillar-stat-label"><i class="fa-solid fa-business-time"></i> Working Hours Returned</span>
-                            <span class="pillar-stat-val" id="pillarHrs">198,747,168 hrs</span>
+                            <span class="pillar-stat-val" id="pillarHrs">199,646,880 hrs</span>
                         </div>
                         <div class="pillar-stat-item">
-                            <span class="pillar-stat-label"><i class="fa-solid fa-id-card-clip"></i> Registered Citizens & Drivers</span>
-                            <span class="pillar-stat-val">8.28M Records</span>
+                            <span class="pillar-stat-label"><i class="fa-solid fa-id-card-clip"></i> Registered Citizens & Licensees</span>
+                            <span class="pillar-stat-val">8.32M Records</span>
                         </div>
                         <div class="pillar-stat-item">
                             <span class="pillar-stat-label"><i class="fa-solid fa-shield-cat"></i> Govt & LEA Personnel Verified</span>
@@ -1118,7 +1127,7 @@ html_content = f"""<!DOCTYPE html>
                             <span class="pillar-tag"><i class="fa-solid fa-leaf"></i> ENVIRONMENTAL</span>
                             <i class="fa-solid fa-earth-americas" style="color: var(--accent-green); font-size: 20px;"></i>
                         </div>
-                        <div class="pillar-hero-num" id="pillarCO2">94,529 MT</div>
+                        <div class="pillar-hero-num" id="pillarCO2">94,957 MT</div>
                         <div class="pillar-hero-title">Carbon Emissions Avoided (CO₂e)</div>
                         <div class="pillar-formula-box">
                             ((Paper*0.005)+(Hours*0.475))/1000
@@ -1128,23 +1137,23 @@ html_content = f"""<!DOCTYPE html>
                     <div class="pillar-stats-list">
                         <div class="pillar-stat-item">
                             <span class="pillar-stat-label"><i class="fa-solid fa-route"></i> Travel Distance Avoided</span>
-                            <span class="pillar-stat-val" id="pillarKM">248.43M KM</span>
+                            <span class="pillar-stat-val" id="pillarKM">249.56M KM</span>
                         </div>
                         <div class="pillar-stat-item">
                             <span class="pillar-stat-label"><i class="fa-solid fa-droplet"></i> Water Saved</span>
-                            <span class="pillar-stat-val" id="pillarWater">745.30M Liters</span>
+                            <span class="pillar-stat-val" id="pillarWater">748.68M Liters</span>
                         </div>
                         <div class="pillar-stat-item">
                             <span class="pillar-stat-label"><i class="fa-solid fa-sheet-plastic"></i> A4 Paper Sheets Saved</span>
-                            <span class="pillar-stat-val" id="pillarPaper">24,843,396</span>
+                            <span class="pillar-stat-val" id="pillarPaper">24,955,860</span>
                         </div>
                         <div class="pillar-stat-item">
                             <span class="pillar-stat-label"><i class="fa-solid fa-tree"></i> Trees Preserved</span>
-                            <span class="pillar-stat-val" id="pillarTrees">2,981 trees</span>
+                            <span class="pillar-stat-val" id="pillarTrees">2,995 trees</span>
                         </div>
                         <div class="pillar-stat-item">
                             <span class="pillar-stat-label"><i class="fa-solid fa-bolt"></i> Energy Saved</span>
-                            <span class="pillar-stat-val" id="pillarEnergy">828,113 kWh</span>
+                            <span class="pillar-stat-val" id="pillarEnergy">831,862 kWh</span>
                         </div>
                     </div>
                 </div>
@@ -1156,7 +1165,7 @@ html_content = f"""<!DOCTYPE html>
                             <span class="pillar-tag"><i class="fa-solid fa-scale-balanced"></i> FINANCIAL & GOVERNANCE</span>
                             <i class="fa-solid fa-landmark" style="color: var(--accent-amber); font-size: 20px;"></i>
                         </div>
-                        <div class="pillar-hero-num" id="pillarRevenue">PKR 7.74B</div>
+                        <div class="pillar-hero-num" id="pillarRevenue">PKR 7.75B</div>
                         <div class="pillar-hero-title">Documented Government Treasury Revenue</div>
                         <div class="pillar-formula-box">
                             100% Corruption-Free Digital Collection
@@ -1174,7 +1183,7 @@ html_content = f"""<!DOCTYPE html>
                         </div>
                         <div class="pillar-stat-item">
                             <span class="pillar-stat-label"><i class="fa-solid fa-credit-card"></i> Smart Cards Issued</span>
-                            <span class="pillar-stat-val">8.00M Cards</span>
+                            <span class="pillar-stat-val">8.04M Cards</span>
                         </div>
                         <div class="pillar-stat-item">
                             <span class="pillar-stat-label"><i class="fa-solid fa-arrows-spin"></i> Service Availability</span>
@@ -1199,7 +1208,7 @@ html_content = f"""<!DOCTYPE html>
                     <div class="chart-header">
                         <div class="chart-title">
                             <h3>Volume by Sub Service Category</h3>
-                            <p>Breakdown across Arms, MVRS & Driving License services</p>
+                            <p>Breakdown across Arms, MVRS, Driving & Wildlife services</p>
                         </div>
                     </div>
                     <div class="chart-container">
@@ -1260,14 +1269,14 @@ html_content = f"""<!DOCTYPE html>
                     <div class="global-source"><i class="fa-solid fa-chart-line"></i> MCKINSEY GLOBAL</div>
                     <div class="global-stat">6%</div>
                     <div class="global-desc">GDP uplift from digital payment adoption in emerging economies through productivity & reduced leakage.</div>
-                    <div class="global-rts-note">Digitised 8.28M+ services, formalising PKR 7.74B revenue.</div>
+                    <div class="global-rts-note">Digitised 8.32M+ services, formalising PKR 7.75B revenue.</div>
                 </div>
 
                 <div class="global-card">
                     <div class="global-source"><i class="fa-solid fa-building-columns"></i> WORLD BANK</div>
                     <div class="global-stat">30%</div>
                     <div class="global-desc">Reduction in government administrative costs via digital automation and paperless processing.</div>
-                    <div class="global-rts-note">Saved 24.84M paper sheets and 198.74M processing hours.</div>
+                    <div class="global-rts-note">Saved 24.96M paper sheets and 199.65M processing hours.</div>
                 </div>
 
                 <div class="global-card">
@@ -1296,7 +1305,7 @@ html_content = f"""<!DOCTYPE html>
                     </div>
                     <div class="search-box">
                         <i class="fa-solid fa-magnifying-glass"></i>
-                        <input type="text" id="tableSearchInput" placeholder="Search district (e.g. Peshawar, Swat)..." onkeyup="filterDistrictTable()">
+                        <input type="text" id="tableSearchInput" placeholder="Search district (e.g. Peshawar, Swat, Buner)..." onkeyup="filterDistrictTable()">
                     </div>
                 </div>
 
@@ -1328,7 +1337,7 @@ html_content = f"""<!DOCTYPE html>
         <footer>
             <div>
                 <strong>KP INFORMATION TECHNOLOGY BOARD (KPITB)</strong><br>
-                Data powered by live PostgreSQL production records (`arms_denormal`, `MVRS`, and `driving_denormal` tables). August 2026.
+                Data powered by live production databases (`arms_denormal`, `MVRS`, `driving_denormal`, and `hunting_denormal`). August 2026.
             </div>
             <div>
                 Confidential • KP Government Internal Digital Impact Dashboard
@@ -1347,6 +1356,7 @@ html_content = f"""<!DOCTYPE html>
         const armsSubServices = ["New License", "License Renewal", "Copy to Card Conversion", "Weapon Change", "Provincial to All Pakistan", "Cartridge Increase", "Duplicate Card"];
         const mvrsSubServices = ["Token Tax Collection", "New Vehicle Registration", "Transfer of Ownership", "Smart Card Issuance", "Vehicle Re-registration", "Duplicate Smart Card", "Vehicle Alteration"];
         const drivingSubServices = ["Permanent Driving License", "Learner Permit", "License Renewal & Endorsement", "International Driving Permit (IDP)"];
+        const huntingSubServices = ["New Hunting License", "New Possession License", "Hunting Permit & Game Reserve Permits"];
 
         // Populate Sub-Service Dropdown dynamically
         function updateSubServiceDropdown() {{
@@ -1357,7 +1367,8 @@ html_content = f"""<!DOCTYPE html>
             if (currentSystem === 'Arms & Licensing') list = armsSubServices;
             else if (currentSystem === 'MVRS') list = mvrsSubServices;
             else if (currentSystem === 'Driving Licenses') list = drivingSubServices;
-            else list = [...armsSubServices, ...mvrsSubServices, ...drivingSubServices];
+            else if (currentSystem === 'Wildlife & Hunting') list = huntingSubServices;
+            else list = [...armsSubServices, ...mvrsSubServices, ...drivingSubServices, ...huntingSubServices];
 
             list.forEach(s => {{
                 const opt = document.createElement('option');
@@ -1385,6 +1396,7 @@ html_content = f"""<!DOCTYPE html>
             else if (sysName === 'Arms & Licensing') document.getElementById('tabArms').classList.add('active');
             else if (sysName === 'MVRS') document.getElementById('tabMVRS').classList.add('active');
             else if (sysName === 'Driving Licenses') document.getElementById('tabDriving').classList.add('active');
+            else if (sysName === 'Wildlife & Hunting') document.getElementById('tabHunting').classList.add('active');
 
             // Update Hero Banner Copy
             const heroTag = document.getElementById('heroTag');
@@ -1403,10 +1415,14 @@ html_content = f"""<!DOCTYPE html>
                 heroTag.textContent = 'TRANSPORT DEPARTMENT TRANSFORMATION';
                 heroTitle.textContent = 'Digitising Driving Licenses Across Khyber Pakhtunkhwa';
                 heroDesc.textContent = 'Quantifying financial, public, environmental, and governance impacts across 4.23 Million driving licenses.';
+            }} else if (sysName === 'Wildlife & Hunting') {{
+                heroTag.textContent = 'FORESTRY & WILDLIFE DEPARTMENT TRANSFORMATION';
+                heroTitle.textContent = 'Digitising Wildlife & Hunting Licenses Across KPK';
+                heroDesc.textContent = 'Quantifying financial, public, environmental, and governance impacts across 37,488 hunting licenses.';
             }} else {{
                 heroTag.textContent = 'WHOLE KPK DIGITAL TRANSFORMATION';
                 heroTitle.textContent = 'Digitising Public Services Across Khyber Pakhtunkhwa';
-                heroDesc.textContent = 'Quantifying financial, public, environmental, and governance impacts across all 43 districts for 8.28 Million public transactions.';
+                heroDesc.textContent = 'Quantifying financial, public, environmental, and governance impacts across all 43 districts for 8.32 Million public transactions.';
             }}
 
             updateSubServiceDropdown();
@@ -1630,11 +1646,12 @@ html_content = f"""<!DOCTYPE html>
                 let baseApps = d.apps;
                 if (currentSystem === 'MVRS') baseApps = Math.round(d.apps * (3425172 / 622703));
                 else if (currentSystem === 'Driving Licenses') baseApps = Math.round(d.apps * (4233257 / 622703));
-                else if (currentSystem === 'ALL') baseApps = Math.round(d.apps * (8281132 / 622703));
+                else if (currentSystem === 'Wildlife & Hunting') baseApps = Math.round(d.apps * (37488 / 622703));
+                else if (currentSystem === 'ALL') baseApps = Math.round(d.apps * (8318620 / 622703));
 
                 const count = distCounts[d.district] !== undefined ? distCounts[d.district] : baseApps;
                 const apps = count;
-                const rev = (d.revenue * (apps / d.apps)) || (apps * 950);
+                const rev = (d.revenue * (apps / d.apps)) || (apps * 930);
                 const outPocket = (apps * 2500);
                 const visits = apps * 2;
                 const hours = apps * 24;
@@ -1690,4 +1707,4 @@ html_content = f"""<!DOCTYPE html>
 with open(html_path, "w", encoding="utf-8") as f:
     f.write(html_content)
 
-print(f"✔ Successfully generated 3-system KPK Digitisation Dashboard: {html_path}")
+print(f"✔ Successfully generated 4-system KPK Digitisation Dashboard: {html_path}")
