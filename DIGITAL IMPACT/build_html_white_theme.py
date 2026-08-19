@@ -53,6 +53,11 @@ html_content = f"""<!DOCTYPE html>
             --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
             --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.07), 0 2px 4px -1px rgba(0, 0, 0, 0.04);
             --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+
+            /* Emil Design Engineering Physics-Based Curve Variables */
+            --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+            --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
+            --ease-drawer: cubic-bezier(0.32, 0.72, 0, 1);
         }}
 
         * {{
@@ -67,6 +72,7 @@ html_content = f"""<!DOCTYPE html>
             color: var(--text-primary);
             line-height: 1.5;
             padding-bottom: 60px;
+            -webkit-font-smoothing: antialiased;
         }}
 
         h1, h2, h3, h4, .brand-font {{
@@ -113,6 +119,13 @@ html_content = f"""<!DOCTYPE html>
             font-size: 22px;
             color: #FFFFFF;
             box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
+            transition: transform 200ms var(--ease-out);
+        }}
+
+        @media (hover: hover) and (pointer: fine) {{
+            .brand-logo:hover {{
+                transform: scale(1.04);
+            }}
         }}
 
         .brand-text h4 {{
@@ -164,6 +177,7 @@ html_content = f"""<!DOCTYPE html>
             100% {{ opacity: 1; transform: scale(1); }}
         }}
 
+        /* Emil Design Eng: Tactile Snappy Buttons with Active Press Feedback (scale 0.97) */
         .btn-print {{
             background: #FFFFFF;
             border: 1px solid var(--border-color);
@@ -173,17 +187,25 @@ html_content = f"""<!DOCTYPE html>
             font-size: 13px;
             font-weight: 600;
             cursor: pointer;
-            transition: all 0.2s;
+            transition: transform 160ms var(--ease-out), background-color 160ms var(--ease-out), border-color 160ms var(--ease-out), color 160ms var(--ease-out), box-shadow 160ms var(--ease-out);
             display: flex;
             align-items: center;
             gap: 8px;
             box-shadow: var(--shadow-sm);
+            user-select: none;
+            -webkit-user-select: none;
         }}
 
-        .btn-print:hover {{
-            background: var(--accent-blue-light);
-            border-color: var(--accent-blue);
-            color: var(--accent-blue);
+        @media (hover: hover) and (pointer: fine) {{
+            .btn-print:hover {{
+                background: var(--accent-blue-light);
+                border-color: var(--accent-blue);
+                color: var(--accent-blue);
+            }}
+        }}
+
+        .btn-print:active {{
+            transform: scale(0.97);
         }}
 
         /* System Service Selector Tabs */
@@ -194,22 +216,31 @@ html_content = f"""<!DOCTYPE html>
             gap: 10px;
         }}
 
+        /* Emil Design Eng: Active State Scale(0.97) and Smooth Physical Feedback */
         .system-tab {{
             background: #FFFFFF;
             border: 2px solid var(--border-color);
             border-radius: 12px;
             padding: 12px 14px;
             cursor: pointer;
-            transition: all 0.2s;
+            transition: transform 160ms var(--ease-out), border-color 160ms var(--ease-out), background-color 160ms var(--ease-out), box-shadow 160ms var(--ease-out);
             display: flex;
             align-items: center;
             gap: 10px;
             box-shadow: var(--shadow-sm);
+            user-select: none;
+            -webkit-user-select: none;
         }}
 
-        .system-tab:hover {{
-            border-color: var(--accent-blue);
-            background: var(--accent-blue-light);
+        @media (hover: hover) and (pointer: fine) {{
+            .system-tab:hover {{
+                border-color: var(--accent-blue);
+                background: var(--accent-blue-light);
+            }}
+        }}
+
+        .system-tab:active {{
+            transform: scale(0.97);
         }}
 
         .system-tab.active {{
@@ -229,6 +260,7 @@ html_content = f"""<!DOCTYPE html>
             background: var(--bg-primary);
             color: var(--accent-blue);
             flex-shrink: 0;
+            transition: background-color 160ms var(--ease-out), color 160ms var(--ease-out);
         }}
 
         .system-tab.active .system-tab-icon {{
@@ -276,6 +308,7 @@ html_content = f"""<!DOCTYPE html>
             text-transform: uppercase;
             color: #FFFFFF;
             margin-bottom: 12px;
+            transition: background-color 200ms var(--ease-out);
         }}
 
         .hero-title-group h2 {{
@@ -328,13 +361,21 @@ html_content = f"""<!DOCTYPE html>
             font-size: 12px;
             font-weight: 600;
             cursor: pointer;
-            transition: all 0.2s;
+            transition: transform 160ms var(--ease-out), background-color 160ms var(--ease-out), color 160ms var(--ease-out), border-color 160ms var(--ease-out);
+            user-select: none;
+            -webkit-user-select: none;
         }}
 
-        .btn-reset:hover {{
-            background: #FEE2E2;
-            color: #DC2626;
-            border-color: #FCA5A5;
+        @media (hover: hover) and (pointer: fine) {{
+            .btn-reset:hover {{
+                background: #FEE2E2;
+                color: #DC2626;
+                border-color: #FCA5A5;
+            }}
+        }}
+
+        .btn-reset:active {{
+            transform: scale(0.97);
         }}
 
         .filters-grid {{
@@ -370,12 +411,12 @@ html_content = f"""<!DOCTYPE html>
             font-weight: 600;
             color: var(--text-primary);
             outline: none;
-            transition: border-color 0.2s, box-shadow 0.2s;
+            transition: border-color 160ms var(--ease-out), box-shadow 160ms var(--ease-out);
         }}
 
         .filter-group select:focus, .filter-group input:focus {{
             border-color: var(--accent-blue);
-            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
         }}
 
         /* Hero 4 Metric Cards */
@@ -386,15 +427,17 @@ html_content = f"""<!DOCTYPE html>
             margin-bottom: 32px;
         }}
 
+        /* Emil Design Eng: Hardware Accelerated Smooth Elevation */
         .metric-card {{
             background: #FFFFFF;
             border: 1px solid var(--border-color);
             border-radius: 16px;
             padding: 22px 24px;
             box-shadow: var(--shadow-md);
-            transition: transform 0.2s, box-shadow 0.2s;
+            transition: transform 180ms var(--ease-out), box-shadow 180ms var(--ease-out);
             position: relative;
             overflow: hidden;
+            will-change: transform;
         }}
 
         .metric-card::before {{
@@ -411,9 +454,11 @@ html_content = f"""<!DOCTYPE html>
         .metric-card.amber::before {{ background: var(--accent-amber); }}
         .metric-card.purple::before {{ background: var(--accent-purple); }}
 
-        .metric-card:hover {{
-            transform: translateY(-3px);
-            box-shadow: var(--shadow-lg);
+        @media (hover: hover) and (pointer: fine) {{
+            .metric-card:hover {{
+                transform: translateY(-2px);
+                box-shadow: var(--shadow-lg);
+            }}
         }}
 
         .metric-header {{
@@ -453,6 +498,7 @@ html_content = f"""<!DOCTYPE html>
             line-height: 1.1;
             margin-bottom: 4px;
             font-family: 'Outfit', sans-serif;
+            transition: color 160ms var(--ease-out);
         }}
 
         .metric-sub {{
@@ -494,6 +540,7 @@ html_content = f"""<!DOCTYPE html>
             padding: 24px;
             border: 1px solid var(--border-color);
             box-shadow: var(--shadow-sm);
+            transition: transform 180ms var(--ease-out), box-shadow 180ms var(--ease-out);
         }}
 
         .paradigm-card.before {{
@@ -571,7 +618,8 @@ html_content = f"""<!DOCTYPE html>
             justify-content: space-between;
             position: relative;
             overflow: hidden;
-            transition: transform 0.2s;
+            transition: transform 180ms var(--ease-out), box-shadow 180ms var(--ease-out);
+            will-change: transform;
         }}
 
         .pillar-card::before {{
@@ -587,9 +635,11 @@ html_content = f"""<!DOCTYPE html>
         .pillar-card.environmental::before {{ background: var(--accent-green); }}
         .pillar-card.governance::before {{ background: var(--accent-amber); }}
 
-        .pillar-card:hover {{
-            transform: translateY(-3px);
-            box-shadow: var(--shadow-lg);
+        @media (hover: hover) and (pointer: fine) {{
+            .pillar-card:hover {{
+                transform: translateY(-2px);
+                box-shadow: var(--shadow-lg);
+            }}
         }}
 
         .pillar-header {{
@@ -680,6 +730,7 @@ html_content = f"""<!DOCTYPE html>
             border-radius: 16px;
             padding: 22px;
             box-shadow: var(--shadow-md);
+            transition: transform 180ms var(--ease-out), box-shadow 180ms var(--ease-out);
         }}
 
         .chart-header {{
@@ -717,6 +768,14 @@ html_content = f"""<!DOCTYPE html>
             border-radius: 14px;
             padding: 20px;
             box-shadow: var(--shadow-sm);
+            transition: transform 180ms var(--ease-out), box-shadow 180ms var(--ease-out);
+        }}
+
+        @media (hover: hover) and (pointer: fine) {{
+            .global-card:hover {{
+                transform: translateY(-2px);
+                box-shadow: var(--shadow-md);
+            }}
         }}
 
         .global-source {{
@@ -786,10 +845,12 @@ html_content = f"""<!DOCTYPE html>
             padding: 8px 12px 8px 36px;
             font-size: 13px;
             outline: none;
+            transition: border-color 160ms var(--ease-out), box-shadow 160ms var(--ease-out);
         }}
 
         .search-box input:focus {{
             border-color: var(--accent-blue);
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
         }}
 
         .search-box i {{
@@ -829,6 +890,11 @@ html_content = f"""<!DOCTYPE html>
             border-bottom: 1px solid var(--border-color);
             color: var(--text-secondary);
             white-space: nowrap;
+            transition: background-color 150ms var(--ease-out);
+        }}
+
+        tbody tr {{
+            transition: background-color 150ms var(--ease-out);
         }}
 
         tbody tr:hover {{
@@ -843,6 +909,17 @@ html_content = f"""<!DOCTYPE html>
         .td-highlight {{
             font-weight: 700;
             color: var(--accent-blue);
+        }}
+
+        /* Emil Design Eng: Accessibility - Reduced Motion Support */
+        @media (prefers-reduced-motion: reduce) {{
+            *, ::before, ::after {{
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
+                transform: none !important;
+            }}
         }}
 
         /* Footer */
@@ -1549,6 +1626,10 @@ html_content = f"""<!DOCTYPE html>
                 options: {{
                     responsive: true,
                     maintainAspectRatio: false,
+                    animation: {{
+                        duration: 300,
+                        easing: 'easeOutQuart'
+                    }},
                     plugins: {{ legend: {{ display: false }} }},
                     scales: {{
                         x: {{ ticks: {{ color: '#475569', font: {{ size: 10 }} }}, grid: {{ display: false }} }},
@@ -1578,6 +1659,10 @@ html_content = f"""<!DOCTYPE html>
                 options: {{
                     responsive: true,
                     maintainAspectRatio: false,
+                    animation: {{
+                        duration: 300,
+                        easing: 'easeOutQuart'
+                    }},
                     plugins: {{ legend: {{ display: false }} }},
                     scales: {{
                         x: {{ ticks: {{ color: '#475569', font: {{ size: 11 }} }}, grid: {{ display: false }} }},
@@ -1604,6 +1689,10 @@ html_content = f"""<!DOCTYPE html>
                     indexAxis: 'y',
                     responsive: true,
                     maintainAspectRatio: false,
+                    animation: {{
+                        duration: 300,
+                        easing: 'easeOutQuart'
+                    }},
                     plugins: {{ legend: {{ display: false }} }},
                     scales: {{
                         x: {{ ticks: {{ color: '#475569', font: {{ size: 10 }} }}, grid: {{ color: '#F1F5F9' }} }},
@@ -1627,6 +1716,10 @@ html_content = f"""<!DOCTYPE html>
                 options: {{
                     responsive: true,
                     maintainAspectRatio: false,
+                    animation: {{
+                        duration: 300,
+                        easing: 'easeOutQuart'
+                    }},
                     plugins: {{ legend: {{ position: 'bottom', labels: {{ color: '#475569', font: {{ size: 11 }} }} }} }},
                     cutout: '70%'
                 }}
@@ -1707,4 +1800,4 @@ html_content = f"""<!DOCTYPE html>
 with open(html_path, "w", encoding="utf-8") as f:
     f.write(html_content)
 
-print(f"✔ Successfully generated 4-system KPK Digitisation Dashboard: {html_path}")
+print(f"✔ Successfully generated Emil-polished 4-system KPK Digitisation Dashboard: {html_path}")
