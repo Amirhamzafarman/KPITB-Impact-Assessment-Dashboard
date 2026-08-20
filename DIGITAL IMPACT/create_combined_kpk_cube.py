@@ -6,7 +6,7 @@ with open("/Users/hamza/Documents/KPITB/RTS/DIGITAL IMPACT/district_data.json", 
     district_list = json.load(f)
 
 # System Targets:
-# 1. Arms & Licensing (Home Dept)
+# 1. Arms & Licensing (Home Dept) 
 arms_total_apps = 622703
 arms_total_rev = 4029655958
 
