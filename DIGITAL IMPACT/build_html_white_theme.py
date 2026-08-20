@@ -27,37 +27,37 @@ html_content = f"""<!DOCTYPE html>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
         :root {{
-            --bg-primary: #F8FAFC;
+            --bg-primary: #F0FDF4;
             --bg-secondary: #FFFFFF;
             --bg-card: #FFFFFF;
-            --bg-card-hover: #F1F5F9;
+            --bg-card-hover: #F0FDFA;
             --border-color: #E2E8F0;
-            --border-bright: #93C5FD;
+            --border-bright: #99F6E4;
             
             --text-primary: #0F172A;
-            --text-secondary: #475569;
+            --text-secondary: #334155;
             --text-muted: #64748B;
             
-            --accent-blue: #1D4ED8;
-            --accent-blue-light: #EFF6FF;
-            --accent-cyan: #0284C7;
-            --accent-green: #047857;
-            --accent-green-light: #ECFDF5;
-            --accent-emerald: #10B981;
+            --accent-teal: #0D9488;
+            --accent-teal-light: #F0FDFA;
+            --accent-blue: #0284C7;
+            --accent-blue-light: #F0F9FF;
+            --accent-emerald: #059669;
+            --accent-emerald-light: #ECFDF5;
             --accent-amber: #D97706;
             --accent-amber-light: #FFFBEB;
             --accent-purple: #7C3AED;
             --accent-purple-light: #F5F3FF;
             
-            --gradient-banner: linear-gradient(135deg, #1E3A8A 0%, #2563EB 50%, #059669 100%);
-            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.07), 0 2px 4px -1px rgba(0, 0, 0, 0.04);
-            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            --gradient-banner: linear-gradient(135deg, #0D9488 0%, #059669 50%, #0284C7 100%);
+            --gradient-card: linear-gradient(180deg, #FFFFFF 0%, #F0FDFA 100%);
+            --shadow-sm: 0 1px 2px 0 rgba(13, 148, 136, 0.05);
+            --shadow-md: 0 4px 12px -2px rgba(13, 148, 136, 0.08), 0 2px 4px -1px rgba(0, 0, 0, 0.04);
+            --shadow-lg: 0 12px 24px -4px rgba(13, 148, 136, 0.15), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
 
-            /* Emil Design Engineering Physics-Based Curve Variables */
+            /* Emil Design Engineering Physics-Based Curves */
             --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
             --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
-            --ease-drawer: cubic-bezier(0.32, 0.72, 0, 1);
         }}
 
         * {{
@@ -68,7 +68,7 @@ html_content = f"""<!DOCTYPE html>
         }}
 
         body {{
-            background-color: var(--bg-primary);
+            background: linear-gradient(180deg, #F0FDF4 0%, #F8FAFC 100%);
             color: var(--text-primary);
             line-height: 1.5;
             padding-bottom: 60px;
@@ -118,7 +118,7 @@ html_content = f"""<!DOCTYPE html>
             justify-content: center;
             font-size: 22px;
             color: #FFFFFF;
-            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
+            box-shadow: 0 4px 14px rgba(13, 148, 136, 0.3);
             transition: transform 200ms var(--ease-out);
         }}
 
@@ -132,7 +132,7 @@ html_content = f"""<!DOCTYPE html>
             font-size: 11px;
             letter-spacing: 1.5px;
             text-transform: uppercase;
-            color: var(--accent-green);
+            color: var(--accent-emerald);
             font-weight: 700;
         }}
 
@@ -149,9 +149,9 @@ html_content = f"""<!DOCTYPE html>
         }}
 
         .badge-live {{
-            background: var(--accent-green-light);
+            background: var(--accent-emerald-light);
             border: 1px solid #A7F3D0;
-            color: var(--accent-green);
+            color: var(--accent-emerald);
             padding: 6px 14px;
             border-radius: 20px;
             font-size: 12px;
@@ -164,10 +164,10 @@ html_content = f"""<!DOCTYPE html>
         .badge-live span {{
             width: 8px;
             height: 8px;
-            background-color: var(--accent-green);
+            background-color: var(--accent-emerald);
             border-radius: 50%;
             display: inline-block;
-            box-shadow: 0 0 8px var(--accent-green);
+            box-shadow: 0 0 8px var(--accent-emerald);
             animation: pulse 2s infinite;
         }}
 
@@ -177,7 +177,6 @@ html_content = f"""<!DOCTYPE html>
             100% {{ opacity: 1; transform: scale(1); }}
         }}
 
-        /* Emil Design Eng: Tactile Snappy Buttons with Active Press Feedback (scale 0.97) */
         .btn-print {{
             background: #FFFFFF;
             border: 1px solid var(--border-color);
@@ -193,14 +192,13 @@ html_content = f"""<!DOCTYPE html>
             gap: 8px;
             box-shadow: var(--shadow-sm);
             user-select: none;
-            -webkit-user-select: none;
         }}
 
         @media (hover: hover) and (pointer: fine) {{
             .btn-print:hover {{
-                background: var(--accent-blue-light);
-                border-color: var(--accent-blue);
-                color: var(--accent-blue);
+                background: var(--accent-teal-light);
+                border-color: var(--accent-teal);
+                color: var(--accent-teal);
             }}
         }}
 
@@ -208,7 +206,7 @@ html_content = f"""<!DOCTYPE html>
             transform: scale(0.97);
         }}
 
-        /* System Service Selector Tabs */
+        /* System Service Selector Tabs - Figma Pill Style */
         .system-tabs-container {{
             margin: 20px 0 16px 0;
             display: grid;
@@ -216,11 +214,10 @@ html_content = f"""<!DOCTYPE html>
             gap: 10px;
         }}
 
-        /* Emil Design Eng: Active State Scale(0.97) and Smooth Physical Feedback */
         .system-tab {{
             background: #FFFFFF;
             border: 2px solid var(--border-color);
-            border-radius: 12px;
+            border-radius: 14px;
             padding: 12px 14px;
             cursor: pointer;
             transition: transform 160ms var(--ease-out), border-color 160ms var(--ease-out), background-color 160ms var(--ease-out), box-shadow 160ms var(--ease-out);
@@ -229,13 +226,12 @@ html_content = f"""<!DOCTYPE html>
             gap: 10px;
             box-shadow: var(--shadow-sm);
             user-select: none;
-            -webkit-user-select: none;
         }}
 
         @media (hover: hover) and (pointer: fine) {{
             .system-tab:hover {{
-                border-color: var(--accent-blue);
-                background: var(--accent-blue-light);
+                border-color: var(--accent-teal);
+                background: var(--accent-teal-light);
             }}
         }}
 
@@ -244,9 +240,10 @@ html_content = f"""<!DOCTYPE html>
         }}
 
         .system-tab.active {{
-            background: #FFFFFF;
-            border-color: var(--accent-blue);
-            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15), var(--shadow-md);
+            background: var(--accent-teal);
+            border-color: var(--accent-teal);
+            color: #FFFFFF;
+            box-shadow: 0 4px 14px rgba(13, 148, 136, 0.3), var(--shadow-md);
         }}
 
         .system-tab-icon {{
@@ -258,13 +255,18 @@ html_content = f"""<!DOCTYPE html>
             justify-content: center;
             font-size: 15px;
             background: var(--bg-primary);
-            color: var(--accent-blue);
+            color: var(--accent-teal);
             flex-shrink: 0;
             transition: background-color 160ms var(--ease-out), color 160ms var(--ease-out);
         }}
 
         .system-tab.active .system-tab-icon {{
-            background: var(--accent-blue);
+            background: rgba(255, 255, 255, 0.2);
+            color: #FFFFFF;
+        }}
+
+        .system-tab.active .system-tab-text h3,
+        .system-tab.active .system-tab-text p {{
             color: #FFFFFF;
         }}
 
@@ -280,14 +282,14 @@ html_content = f"""<!DOCTYPE html>
             color: var(--text-muted);
         }}
 
-        /* Hero Banner */
+        /* Hero Banner - Figma Vibrant Gradient */
         .hero-banner {{
             margin-bottom: 24px;
             background: var(--gradient-banner);
             border-radius: 20px;
             padding: 32px 36px;
             color: #FFFFFF;
-            box-shadow: var(--shadow-lg);
+            box-shadow: 0 12px 28px -6px rgba(13, 148, 136, 0.3);
             position: relative;
             overflow: hidden;
         }}
@@ -298,7 +300,7 @@ html_content = f"""<!DOCTYPE html>
 
         .hero-tag {{
             display: inline-block;
-            background: rgba(255, 255, 255, 0.18);
+            background: rgba(255, 255, 255, 0.22);
             backdrop-filter: blur(8px);
             padding: 4px 12px;
             border-radius: 6px;
@@ -308,11 +310,10 @@ html_content = f"""<!DOCTYPE html>
             text-transform: uppercase;
             color: #FFFFFF;
             margin-bottom: 12px;
-            transition: background-color 200ms var(--ease-out);
         }}
 
         .hero-title-group h2 {{
-            font-size: 30px;
+            font-size: 32px;
             font-weight: 900;
             line-height: 1.2;
             margin-bottom: 8px;
@@ -320,7 +321,7 @@ html_content = f"""<!DOCTYPE html>
 
         .hero-title-group p {{
             font-size: 15px;
-            color: #E0F2FE;
+            color: #CCFBF1;
             line-height: 1.5;
         }}
 
@@ -346,7 +347,7 @@ html_content = f"""<!DOCTYPE html>
             font-weight: 800;
             text-transform: uppercase;
             letter-spacing: 1px;
-            color: var(--accent-blue);
+            color: var(--accent-teal);
             display: flex;
             align-items: center;
             gap: 8px;
@@ -361,9 +362,8 @@ html_content = f"""<!DOCTYPE html>
             font-size: 12px;
             font-weight: 600;
             cursor: pointer;
-            transition: transform 160ms var(--ease-out), background-color 160ms var(--ease-out), color 160ms var(--ease-out), border-color 160ms var(--ease-out);
+            transition: transform 160ms var(--ease-out), background-color 160ms var(--ease-out), color 160ms var(--ease-out);
             user-select: none;
-            -webkit-user-select: none;
         }}
 
         @media (hover: hover) and (pointer: fine) {{
@@ -415,8 +415,8 @@ html_content = f"""<!DOCTYPE html>
         }}
 
         .filter-group select:focus, .filter-group input:focus {{
-            border-color: var(--accent-blue);
-            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+            border-color: var(--accent-teal);
+            box-shadow: 0 0 0 3px rgba(13, 148, 136, 0.15);
         }}
 
         /* Hero 4 Metric Cards */
@@ -427,7 +427,6 @@ html_content = f"""<!DOCTYPE html>
             margin-bottom: 32px;
         }}
 
-        /* Emil Design Eng: Hardware Accelerated Smooth Elevation */
         .metric-card {{
             background: #FFFFFF;
             border: 1px solid var(--border-color);
@@ -437,7 +436,6 @@ html_content = f"""<!DOCTYPE html>
             transition: transform 180ms var(--ease-out), box-shadow 180ms var(--ease-out);
             position: relative;
             overflow: hidden;
-            will-change: transform;
         }}
 
         .metric-card::before {{
@@ -449,8 +447,8 @@ html_content = f"""<!DOCTYPE html>
             height: 100%;
         }}
 
-        .metric-card.blue::before {{ background: var(--accent-blue); }}
-        .metric-card.green::before {{ background: var(--accent-green); }}
+        .metric-card.blue::before {{ background: var(--accent-teal); }}
+        .metric-card.green::before {{ background: var(--accent-emerald); }}
         .metric-card.amber::before {{ background: var(--accent-amber); }}
         .metric-card.purple::before {{ background: var(--accent-purple); }}
 
@@ -478,8 +476,8 @@ html_content = f"""<!DOCTYPE html>
             font-size: 18px;
         }}
 
-        .metric-card.blue .metric-icon {{ background: var(--accent-blue-light); color: var(--accent-blue); }}
-        .metric-card.green .metric-icon {{ background: var(--accent-green-light); color: var(--accent-green); }}
+        .metric-card.blue .metric-icon {{ background: var(--accent-teal-light); color: var(--accent-teal); }}
+        .metric-card.green .metric-icon {{ background: var(--accent-emerald-light); color: var(--accent-emerald); }}
         .metric-card.amber .metric-icon {{ background: var(--accent-amber-light); color: var(--accent-amber); }}
         .metric-card.purple .metric-icon {{ background: var(--accent-purple-light); color: var(--accent-purple); }}
 
@@ -498,7 +496,6 @@ html_content = f"""<!DOCTYPE html>
             line-height: 1.1;
             margin-bottom: 4px;
             font-family: 'Outfit', sans-serif;
-            transition: color 160ms var(--ease-out);
         }}
 
         .metric-sub {{
@@ -516,7 +513,7 @@ html_content = f"""<!DOCTYPE html>
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 1.5px;
-            color: var(--accent-blue);
+            color: var(--accent-teal);
             margin-bottom: 2px;
         }}
 
@@ -549,7 +546,7 @@ html_content = f"""<!DOCTYPE html>
         }}
 
         .paradigm-card.after {{
-            border-left: 4px solid var(--accent-green);
+            border-left: 4px solid var(--accent-emerald);
             background: #ECFDF5;
         }}
 
@@ -619,7 +616,6 @@ html_content = f"""<!DOCTYPE html>
             position: relative;
             overflow: hidden;
             transition: transform 180ms var(--ease-out), box-shadow 180ms var(--ease-out);
-            will-change: transform;
         }}
 
         .pillar-card::before {{
@@ -631,8 +627,8 @@ html_content = f"""<!DOCTYPE html>
             height: 4px;
         }}
 
-        .pillar-card.citizen::before {{ background: var(--accent-blue); }}
-        .pillar-card.environmental::before {{ background: var(--accent-green); }}
+        .pillar-card.citizen::before {{ background: var(--accent-teal); }}
+        .pillar-card.environmental::before {{ background: var(--accent-emerald); }}
         .pillar-card.governance::before {{ background: var(--accent-amber); }}
 
         @media (hover: hover) and (pointer: fine) {{
@@ -658,8 +654,8 @@ html_content = f"""<!DOCTYPE html>
             border-radius: 6px;
         }}
 
-        .pillar-card.citizen .pillar-tag {{ background: var(--accent-blue-light); color: var(--accent-blue); }}
-        .pillar-card.environmental .pillar-tag {{ background: var(--accent-green-light); color: var(--accent-green); }}
+        .pillar-card.citizen .pillar-tag {{ background: var(--accent-teal-light); color: var(--accent-teal); }}
+        .pillar-card.environmental .pillar-tag {{ background: var(--accent-emerald-light); color: var(--accent-emerald); }}
         .pillar-card.governance .pillar-tag {{ background: var(--accent-amber-light); color: var(--accent-amber); }}
 
         .pillar-hero-num {{
@@ -685,7 +681,7 @@ html_content = f"""<!DOCTYPE html>
             padding: 8px 12px;
             font-size: 11px;
             font-family: monospace;
-            color: var(--accent-blue);
+            color: var(--accent-teal);
             margin-bottom: 18px;
         }}
 
@@ -783,7 +779,7 @@ html_content = f"""<!DOCTYPE html>
             font-weight: 800;
             text-transform: uppercase;
             letter-spacing: 1px;
-            color: var(--accent-blue);
+            color: var(--accent-teal);
             margin-bottom: 8px;
             display: flex;
             align-items: center;
@@ -806,11 +802,11 @@ html_content = f"""<!DOCTYPE html>
         }}
 
         .global-rts-note {{
-            background: var(--accent-blue-light);
-            border-left: 3px solid var(--accent-blue);
+            background: var(--accent-teal-light);
+            border-left: 3px solid var(--accent-teal);
             padding: 6px 10px;
             font-size: 11px;
-            color: var(--accent-blue);
+            color: var(--accent-teal);
             border-radius: 0 4px 4px 0;
             font-weight: 600;
         }}
@@ -849,8 +845,8 @@ html_content = f"""<!DOCTYPE html>
         }}
 
         .search-box input:focus {{
-            border-color: var(--accent-blue);
-            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+            border-color: var(--accent-teal);
+            box-shadow: 0 0 0 3px rgba(13, 148, 136, 0.15);
         }}
 
         .search-box i {{
@@ -908,16 +904,15 @@ html_content = f"""<!DOCTYPE html>
 
         .td-highlight {{
             font-weight: 700;
-            color: var(--accent-blue);
+            color: var(--accent-teal);
         }}
 
-        /* Emil Design Eng: Accessibility - Reduced Motion Support */
+        /* Reduced Motion */
         @media (prefers-reduced-motion: reduce) {{
             *, ::before, ::after {{
                 animation-duration: 0.01ms !important;
                 animation-iteration-count: 1 !important;
                 transition-duration: 0.01ms !important;
-                scroll-behavior: auto !important;
                 transform: none !important;
             }}
         }}
@@ -1168,7 +1163,7 @@ html_content = f"""<!DOCTYPE html>
                     <div>
                         <div class="pillar-header">
                             <span class="pillar-tag"><i class="fa-solid fa-user-shield"></i> PUBLIC IMPACT</span>
-                            <i class="fa-solid fa-hand-holding-heart" style="color: var(--accent-blue); font-size: 20px;"></i>
+                            <i class="fa-solid fa-hand-holding-heart" style="color: var(--accent-teal); font-size: 20px;"></i>
                         </div>
                         <div class="pillar-hero-num" id="pillarOutPocket">PKR 20.81B</div>
                         <div class="pillar-hero-title">Total Citizen Out-of-Pocket Cost Saved</div>
@@ -1202,7 +1197,7 @@ html_content = f"""<!DOCTYPE html>
                     <div>
                         <div class="pillar-header">
                             <span class="pillar-tag"><i class="fa-solid fa-leaf"></i> ENVIRONMENTAL</span>
-                            <i class="fa-solid fa-earth-americas" style="color: var(--accent-green); font-size: 20px;"></i>
+                            <i class="fa-solid fa-earth-americas" style="color: var(--accent-emerald); font-size: 20px;"></i>
                         </div>
                         <div class="pillar-hero-num" id="pillarCO2">94,957 MT</div>
                         <div class="pillar-hero-title">Carbon Emissions Avoided (CO₂e)</div>
@@ -1609,7 +1604,7 @@ html_content = f"""<!DOCTYPE html>
         }}
 
         function updateCharts(catData, yrData, distData, male, female) {{
-            // Chart 1: Category
+            // Chart 1: Category - Figma Teal Palette
             const sortedCat = Object.entries(catData).sort((a,b) => b[1] - a[1]).slice(0, 8);
             if (chartCatInstance) chartCatInstance.destroy();
             chartCatInstance = new Chart(document.getElementById('chartCategory'), {{
@@ -1619,17 +1614,14 @@ html_content = f"""<!DOCTYPE html>
                     datasets: [{{
                         label: 'Applications',
                         data: sortedCat.map(c => c[1]),
-                        backgroundColor: '#2563EB',
+                        backgroundColor: '#0D9488',
                         borderRadius: 6
                     }}]
                 }},
                 options: {{
                     responsive: true,
                     maintainAspectRatio: false,
-                    animation: {{
-                        duration: 300,
-                        easing: 'easeOutQuart'
-                    }},
+                    animation: {{ duration: 300, easing: 'easeOutQuart' }},
                     plugins: {{ legend: {{ display: false }} }},
                     scales: {{
                         x: {{ ticks: {{ color: '#475569', font: {{ size: 10 }} }}, grid: {{ display: false }} }},
@@ -1638,7 +1630,7 @@ html_content = f"""<!DOCTYPE html>
                 }}
             }});
 
-            // Chart 2: Yearly Revenue
+            // Chart 2: Yearly Revenue - Figma Emerald Line
             if (chartYearInstance) chartYearInstance.destroy();
             chartYearInstance = new Chart(document.getElementById('chartYearly'), {{
                 type: 'line',
@@ -1648,7 +1640,7 @@ html_content = f"""<!DOCTYPE html>
                         label: 'Revenue (PKR Millions)',
                         data: [yrData['2023']/1e6, yrData['2024']/1e6, yrData['2025']/1e6, yrData['2026']/1e6],
                         borderColor: '#059669',
-                        backgroundColor: 'rgba(5, 150, 105, 0.1)',
+                        backgroundColor: 'rgba(5, 150, 105, 0.12)',
                         fill: true,
                         tension: 0.3,
                         borderWidth: 3,
@@ -1659,10 +1651,7 @@ html_content = f"""<!DOCTYPE html>
                 options: {{
                     responsive: true,
                     maintainAspectRatio: false,
-                    animation: {{
-                        duration: 300,
-                        easing: 'easeOutQuart'
-                    }},
+                    animation: {{ duration: 300, easing: 'easeOutQuart' }},
                     plugins: {{ legend: {{ display: false }} }},
                     scales: {{
                         x: {{ ticks: {{ color: '#475569', font: {{ size: 11 }} }}, grid: {{ display: false }} }},
@@ -1671,7 +1660,7 @@ html_content = f"""<!DOCTYPE html>
                 }}
             }});
 
-            // Chart 3: Top Districts
+            // Chart 3: Top Districts - Figma Cyan/Teal Horizontal
             const sortedDist = Object.entries(distData).sort((a,b) => b[1] - a[1]).slice(0, 10);
             if (chartDistInstance) chartDistInstance.destroy();
             chartDistInstance = new Chart(document.getElementById('chartDistricts'), {{
@@ -1689,10 +1678,7 @@ html_content = f"""<!DOCTYPE html>
                     indexAxis: 'y',
                     responsive: true,
                     maintainAspectRatio: false,
-                    animation: {{
-                        duration: 300,
-                        easing: 'easeOutQuart'
-                    }},
+                    animation: {{ duration: 300, easing: 'easeOutQuart' }},
                     plugins: {{ legend: {{ display: false }} }},
                     scales: {{
                         x: {{ ticks: {{ color: '#475569', font: {{ size: 10 }} }}, grid: {{ color: '#F1F5F9' }} }},
@@ -1701,7 +1687,7 @@ html_content = f"""<!DOCTYPE html>
                 }}
             }});
 
-            // Chart 4: Gender Distribution
+            // Chart 4: Gender Distribution - Figma Teal / Pink Donut
             if (chartGenderInstance) chartGenderInstance.destroy();
             chartGenderInstance = new Chart(document.getElementById('chartGender'), {{
                 type: 'doughnut',
@@ -1709,17 +1695,14 @@ html_content = f"""<!DOCTYPE html>
                     labels: ['Male Apps (PKR 2,500 saved)', 'Female Apps (PKR 4,000 saved)'],
                     datasets: [{{
                         data: [male, female],
-                        backgroundColor: ['#2563EB', '#EC4899'],
+                        backgroundColor: ['#0D9488', '#EC4899'],
                         borderWidth: 0
                     }}]
                 }},
                 options: {{
                     responsive: true,
                     maintainAspectRatio: false,
-                    animation: {{
-                        duration: 300,
-                        easing: 'easeOutQuart'
-                    }},
+                    animation: {{ duration: 300, easing: 'easeOutQuart' }},
                     plugins: {{ legend: {{ position: 'bottom', labels: {{ color: '#475569', font: {{ size: 11 }} }} }} }},
                     cutout: '70%'
                 }}
@@ -1800,4 +1783,4 @@ html_content = f"""<!DOCTYPE html>
 with open(html_path, "w", encoding="utf-8") as f:
     f.write(html_content)
 
-print(f"✔ Successfully generated Emil-polished 4-system KPK Digitisation Dashboard: {html_path}")
+print(f"✔ Successfully generated Figma-matched 4-system KPK Digitisation Dashboard: {html_path}")
